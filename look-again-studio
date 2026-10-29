@@ -1,0 +1,700 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Look Again Studio | Photography</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <a href="#" class="logo">LOOK AGAIN<span>.</span></a>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <a href="#contact" class="nav-button">Book a Session ↗</a>
+    </header>
+
+    <!-- Hero Section -->
+    <main>
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+                <p class="eyebrow">PHOTOGRAPHY • ART • STORIES</p>
+
+                <h1>
+                    Every Frame<br>
+                    Tells a <span>Story.</span>
+                </h1>
+
+                <p class="description">
+                    We capture the moments you never want to forget.
+                    Professional photography, made personal.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#gallery" class="primary-button">
+                        Explore Our Work →
+                    </a>
+
+                    <a href="#about" class="secondary-button">
+                        Discover Our Studio
+                    </a>
+                </div>
+
+                <div class="hero-note">
+                    <span class="status-dot"></span>
+                    TURNING MOMENTS INTO MEMORIES
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <img
+                    src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1200&q=85"
+                    alt="Professional photography camera"
+                >
+
+                <div class="image-caption">
+                    <span>01 / THE ART OF SEEING</span>
+                    <span>LOOK AGAIN STUDIO</span>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- About Section -->
+        <section class="about" id="about">
+            <p class="eyebrow">WELCOME TO LOOK AGAIN</p>
+            <h2>Real moments. <span>Timeless memories.</span></h2>
+            <p>
+                From portraits and weddings to products and events,
+                we tell your story through the power of photography.
+            </p>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services" id="services">
+            <p class="eyebrow">WHAT WE DO</p>
+            <h2>One Studio. Every Story.</h2>
+
+            <div class="service-list">
+                <article>01 — Portrait Photography</article>
+                <article>02 — Weddings & Events</article>
+                <article>03 — Product Photography</article>
+                <article>04 — Family & Lifestyle</article>
+                <article>05 — Nature & Travel</article>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="gallery" id="gallery">
+            <p class="eyebrow">OUR PORTFOLIO</p>
+            <h2>Stories Worth <span>Seeing Again.</span></h2>
+
+            <div class="gallery-grid">
+                <img
+                    src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80"
+                    alt="Wedding photography"
+                >
+
+                <img
+                    src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80"
+                    alt="Portrait photography"
+                >
+
+                <img
+                    src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80"
+                    alt="Product photography"
+                >
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <p class="eyebrow">LET'S CREATE SOMETHING BEAUTIFUL</p>
+            <h2>Your story starts here.</h2>
+            <p>Have a moment worth capturing? Let's talk.</p>
+
+            <a href="mailto:hello@example.com" class="primary-button">
+                Get in Touch ↗
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        <a href="#" class="logo">LOOK AGAIN<span>.</span></a>
+        <p>© 2026 Look Again Studio. All rights reserved.</p>
+    </footer>
+<script src="script.js"></script>
+</body>
+</html>
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    // Elements that will animate while scrolling
+    const elements = document.querySelectorAll(
+        ".hero-content, .hero-image, .about, .services, .gallery, .contact"
+    );
+
+    // Add the animation class
+    elements.forEach((element) => {
+        element.classList.add("reveal");
+    });
+
+    // Detect when an element enters the screen
+    const observer = new IntersectionObserver(
+        (entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            threshold: 0.12
+        }
+    );
+
+    // Start observing each element
+    elements.forEach((element) => {
+        observer.observe(element);
+    });
+
+});
+
+
+/* =========================
+   LOOK AGAIN STUDIO
+   Main Website Styles
+========================= */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+:root {
+    --white: #ffffff;
+    --black: #171717;
+    --gray: #737373;
+    --light-gray: #f5f4f1;
+    --border: #e7e5e0;
+    --accent: #b49a78;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--white);
+    color: var(--black);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* NAVIGATION */
+
+.navbar {
+    min-height: 85px;
+    padding: 0 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    border-bottom: 1px solid var(--border);
+    background: var(--white);
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.navbar nav a {
+    font-size: 13px;
+    color: #444;
+    transition: color 0.3s ease;
+}
+
+.navbar nav a:hover {
+    color: var(--accent);
+}
+
+.nav-button {
+    background: var(--black);
+    color: var(--white);
+    padding: 13px 19px;
+    font-size: 12px;
+    transition: 0.3s ease;
+    white-space: nowrap;
+}
+
+.nav-button:hover,
+.primary-button:hover {
+    background: var(--accent);
+    color: var(--black);
+}
+
+/* HERO SECTION */
+
+.hero {
+    min-height: 610px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: var(--light-gray);
+}
+
+.hero-content {
+    padding: 80px 8% 70px 14%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.eyebrow {
+    font-size: 10px;
+    letter-spacing: 3px;
+    font-weight: 600;
+    color: var(--gray);
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(46px, 5vw, 76px);
+    font-weight: 400;
+    line-height: 1.12;
+    letter-spacing: -2px;
+    margin: 25px 0;
+}
+
+.hero h1 span,
+.about h2 span,
+.gallery h2 span {
+    color: var(--accent);
+}
+
+.description {
+    max-width: 410px;
+    color: var(--gray);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.primary-button,
+.secondary-button {
+    display: inline-block;
+    padding: 15px 20px;
+    font-size: 12px;
+    border: 1px solid var(--black);
+    transition: 0.3s ease;
+}
+
+.primary-button {
+    background: var(--black);
+    color: var(--white);
+}
+
+.secondary-button {
+    background: transparent;
+    color: var(--black);
+}
+
+.secondary-button:hover {
+    background: var(--black);
+    color: var(--white);
+}
+
+.hero-note {
+    margin-top: 45px;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    color: var(--gray);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+}
+
+.hero-image {
+    min-height: 610px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.hero-image:hover img {
+    transform: scale(1.04);
+}
+
+.image-caption {
+    position: absolute;
+    bottom: 22px;
+    left: 22px;
+    right: 22px;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    color: var(--white);
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-shadow: 0 1px 8px #222;
+}
+
+/* ABOUT SECTION */
+
+.about {
+    padding: 100px 20px;
+    text-align: center;
+    max-width: 900px;
+    margin: auto;
+}
+
+.about h2,
+.services h2,
+.gallery h2,
+.contact h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: clamp(34px, 4vw, 49px);
+    line-height: 1.2;
+    margin: 20px 0;
+    letter-spacing: -1px;
+}
+
+.about > p:last-child {
+    max-width: 570px;
+    margin: auto;
+    font-size: 14px;
+    color: var(--gray);
+    line-height: 1.9;
+}
+
+/* SERVICES SECTION */
+
+.services {
+    padding: 80px 8%;
+    background: var(--light-gray);
+}
+
+.services h2 {
+    margin-top: 15px;
+    margin-bottom: 35px;
+}
+
+.service-list {
+    border-top: 1px solid #d9d7d1;
+}
+
+.service-list article {
+    padding: 22px 5px;
+    border-bottom: 1px solid #d9d7d1;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(19px, 2.5vw, 27px);
+    transition: padding-left 0.3s ease, color 0.3s ease;
+}
+
+.service-list article:hover {
+    padding-left: 15px;
+    color: #9b7d58;
+}
+
+/* GALLERY SECTION */
+
+.gallery {
+    padding: 90px 7%;
+}
+
+.gallery h2 {
+    margin-bottom: 35px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-grid img:hover {
+    transform: translateY(-5px);
+}
+
+/* CONTACT SECTION */
+
+.contact {
+    text-align: center;
+    background: var(--black);
+    color: var(--white);
+    padding: 90px 20px;
+}
+
+.contact .eyebrow {
+    color: #c3c3c3;
+}
+
+.contact h2 {
+    margin: 20px 0;
+}
+
+.contact > p:not(.eyebrow) {
+    color: #c3c3c3;
+    font-size: 14px;
+    margin-bottom: 28px;
+}
+
+.contact .primary-button {
+    border-color: var(--white);
+}
+
+/* FOOTER */
+
+footer {
+    padding: 28px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+footer .logo {
+    font-size: 18px;
+}
+
+footer p {
+    font-size: 11px;
+    color: var(--gray);
+}
+
+/* TABLETS */
+
+@media (max-width: 1000px) {
+    .navbar {
+        padding: 20px 4%;
+        flex-wrap: wrap;
+    }
+
+    .navbar nav {
+        gap: 16px;
+    }
+
+    .navbar nav a {
+        font-size: 12px;
+    }
+
+    .hero-content {
+        padding: 55px 7%;
+    }
+
+    .hero,
+    .hero-image {
+        min-height: 520px;
+    }
+
+    .gallery-grid img {
+        height: 260px;
+    }
+}
+
+/* MOBILE PHONES */
+
+@media (max-width: 700px) {
+    .navbar {
+        justify-content: center;
+        gap: 18px;
+        padding: 22px 15px;
+    }
+
+    .logo {
+        font-size: 19px;
+        letter-spacing: 2px;
+    }
+
+    .navbar nav {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 14px 20px;
+    }
+
+    .nav-button {
+        display: none;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content {
+        padding: 65px 25px 50px;
+    }
+
+    .hero h1 {
+        font-size: 49px;
+    }
+
+    .hero-image {
+        min-height: 350px;
+    }
+
+    .about {
+        padding: 70px 24px;
+    }
+
+    .services {
+        padding: 65px 25px;
+    }
+
+    .gallery {
+        padding: 65px 20px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .gallery-grid img {
+        height: 300px;
+    }
+
+    .contact {
+        padding: 70px 22px;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px 15px;
+    }
+}
+
+/* SCROLL ANIMATIONS */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Image hover effect */
+
+.gallery-grid img {
+    cursor: pointer;
+    transition:
+        transform 0.5s ease,
+        filter 0.5s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.03);
+    filter: brightness(0.9);
+}
+
+/* Smooth button interaction */
+
+.primary-button,
+.secondary-button,
+.nav-button {
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.primary-button:hover,
+.secondary-button:hover,
+.nav-button:hover {
+    transform: translateY(-2px);
+}
+
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
